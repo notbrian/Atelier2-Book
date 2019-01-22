@@ -10,22 +10,42 @@ let inventory = [];
 
 
 class Room {
-    constructor() {
-        this.name = "Test"
+    constructor(name, items) {
+        this.name = name
 
-        this.setup = function () {
-
-        }
-
-        this.draw = function () {
-
-        }
+        this.items = items
     }
-
+    
 
 }
 
-let testRoom = new Room;
+class Item {
+    constructor(name, image, description, x, y, width, height) {
+        this.name = name;
+        this.image = image;
+        this.description = description;
+        this.x = x;
+        this.y = y
+        this.width = width;
+        this.height = height
+    }
+}
+
+let Hammer = new Item("Hammer", "assets/hammer.png",
+ "It hammers things.", 87, 183, 50, 50)
+
+ let Duct_Tape = new Item("Duct Tape", "assets/duct_tape.png",
+ "It tapes things.", 216, 156, 50, 50)
+
+ let Keypad = new Item("Keypad", "assets/keypad.png",
+ "You can press numbers on it.", 378, 158, 50, 50)
+
+
+
+let Hub_class = new Room("The Hub", [Hammer, Duct_Tape, Keypad]);
+
+
+
 
 
 function setup() {
@@ -54,21 +74,10 @@ function mousePressed() {
     mgr.handleEvent("mousePressed");
 }
 
-class Item {
-    constructor(name, image, description) {
-        this.name = name;
-        this.image = image;
-        this.description = description;
-    }
-}
-
-let Hammer = new Item("Hammer", "assets/duct_tape.png", "It hammers things.")
-
 function doesCollide(rect) {
     var isCollision = false;
     let x = mouseX;
     let y = mouseY;
-
     var left = rect.x - rect.width / 2,
         right = rect.x + rect.width / 2;
     var top = rect.y + rect.height / 2,
@@ -81,6 +90,7 @@ function doesCollide(rect) {
     return isCollision;
 }
 
+// Draws exits for debugging
 function debugExits(exits) {
 
     for (let exit in exits) {
@@ -91,6 +101,7 @@ function debugExits(exits) {
     }
 }
 
+// Universal collider function for rooms
 function checkExits(exits) {
     for (let exit in exits) {
         let entry = exits[exit];
@@ -104,6 +115,17 @@ function checkExits(exits) {
     }
 }
 
+function checkItems(items) {
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        if (doesCollide(item)) {
+            console.log(`Putting ${item.name} in inventory.`)
+            alert(`You got ${item.name}! ${item.description}`)
+            inventory.push(Hub_class.items.pop(item))
+        }
+    }
+}
+
 function drawName(name) {
     pop();
     fill(0);
@@ -113,26 +135,11 @@ function drawName(name) {
     push()
 }
 
-
 // Intro scene constructor function
 function hub() {
-    const name = "The Hub"
+    const name = Hub_class.name
 
     let exits = {
-        // room1: {
-        //     x: 100,
-        //     y: height/2,
-        //     width: 50,
-        //     height: 120,
-        //     color: color("#c000ff")
-        // },
-        // room2: {
-        //     x: width/2,
-        //     y: height/2,
-        //     width: 70,
-        //     height: 120,
-        //     color: color("#0bfb0b")
-        // },
         down: {
             x: 647,
             y: 539,
@@ -143,11 +150,21 @@ function hub() {
         }
     };
 
+    let items = Hub_class.items
+
+    let loadedImages = []
 
     let background;
     this.setup = function () {
         background = loadImage("assets/basic_space.png");
         imageMode(CENTER);
+
+        for (let i = 0; i < items.length; i++) {
+            const element = items[i];
+            console.log(element)
+            loadedImages.push(loadImage(element.image))
+            
+        }
     };
 
     this.draw = function () {
@@ -156,10 +173,19 @@ function hub() {
         if (debug) {
             debugExits(exits);
         }
+
+        // Draw items
+
+        for (let i = 0; i < items.length; i++) {
+            const element = items[i];
+            image(loadedImages[i], element.x, element.y, element.width, element.height)
+            
+        }
     };
 
     this.mousePressed = function () {
         checkExits(exits);
+        checkItems(items)
     };
 }
 
