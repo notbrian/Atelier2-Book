@@ -19,7 +19,7 @@ function drawHUD() {
 
 function doesCollide(rect, asteroidX, asteroidY) {
     var isCollision = false;
-    let x = asteroidX;
+    let x = steroidX;
     let y = asteroidY;
     var left = rect.x - rect.width / 2,
         right = rect.x + rect.width / 2;
@@ -39,10 +39,10 @@ function setup() {
     background_png = loadImage("./assets/background.png")
     shipImage = loadImage("./assets/ship.png")
     shipThrust_image = loadImage("./assets/shipThrust.png")
+    ast_image = loadImage("./assets/Meteorite1.png")
 
     ship.x = width /2;
     ship.y = 520;
-
 }
 function draw() {
     image(background_png, 0,0)
@@ -55,13 +55,16 @@ function draw() {
     } else {
        image(shipImage, 0, 0, 100,100)
     }
-
     pop()
-
+    for (var s = 0; s != null; s++) {
+      image(ast_image, Asteroid.x, Asteroid.y, Asteroid.width, Asteroid.height);
+      asteroidFall()
+      collisonCheck()
+    }
 
     if(keyIsPressed && key === "a") {
         ship.x -= 3;
-    } 
+    }
     if(keyIsPressed && key === "d") {
         ship.x += 3;
     }
@@ -73,26 +76,28 @@ function draw() {
     if(ship.x >= width ) {
         ship.x = width
     }
-
+    textAlign(CENTER);
+    drawWords(width * 0.5);
 }
 
 function mousePressed() {
-    console.log(mouseX, mouseY)
+    console.log(mouseX, mouseY);
 }
 
-
-// Asteroid :
-// {
-//     x
-//     y
-//     width
-//     height
-// }
-
+var Asteroid = {
+  x : Math.random(0,799),
+  y : 0,
+  width : 15,
+  height : 10
+};
 // Asteroids[Asteroid]
-
+var Asteroids = [Asteroid];
 // draw() {
-//    Loop over the Asteroids array {
+function asteroidFall() {
+         for (var i = 0; i < Asteroids.length; i++) {
+              Asteroids[i].y = Asteroids[i].y + 5
+         }
+        }
 //        For each Asteroid, subtract the y value by 5
 //    }
 
@@ -100,7 +105,25 @@ function mousePressed() {
 //    Check if the asteroid is hitting the ship {
 //        If it is, then take a strike off the ship
 //    }
-    
+function collisonCheck() {
+  for (var i = 0; i < Asteroids.length; i++) {
+    if (doesCollide(Asteroids[i]) && ship.strikes < 3) {
+        ship.strikes++
+        console.log('!')
+    }
+    else if (doesCollide() && ship.strikes == 3) {
+      s=null;
+      function drawWords(x) {
+        fill('red');
+        text('GAME OVER', width * 0.5, height * 0.5);
+}
+
+    }
+    else {
+
+    };
+  };
+}
 
 
 // }
