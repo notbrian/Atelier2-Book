@@ -9,11 +9,28 @@ let ship = {
 }
 let shipImage
 let shipThrust_image
+
 function drawHUD() {
     push()
     imageMode(CORNER)
     image(HUD, 0, 0, 800, 600)
     pop()
+}
+
+function doesCollide(rect, asteroidX, asteroidY) {
+    var isCollision = false;
+    let x = asteroidX;
+    let y = asteroidY;
+    var left = rect.x - rect.width / 2,
+        right = rect.x + rect.width / 2;
+    var top = rect.y + rect.height / 2,
+        bottom = rect.y - rect.height / 2;
+
+    if (x <= right && x >= left && y <= top && y >= bottom) {
+        isCollision = true;
+    }
+
+    return isCollision;
 }
 
 function setup() {
