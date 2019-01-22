@@ -1,0 +1,23 @@
+{
+  "name": "atelier2-book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sketch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notbrian/Atelier2-Book.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notbrian/Atelier2-Book/issues"
+  },
+  "homepage": "https://github.com/notbrian/Atelier2-Book#readme",
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-p5js": "^1.0.1"
+  }
+}
