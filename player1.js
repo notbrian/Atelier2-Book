@@ -144,11 +144,16 @@ function drawName(name) {
     push()
 }
 
-function drawHUD() {
+function drawHUD(items) {
     pop()
     imageMode(CORNER)
     image(HUD, 0, 0, 800, 600)
     push()
+
+    for (let i = 0; i < inventory.length; i++) {
+        const item = inventory[i];
+        image(items[i], 514, 43)
+    }
 }
 // Intro scene constructor function
 
@@ -169,7 +174,7 @@ function hub() {
     };
 
 
-    let loadedImages = []
+    let loadedItems = []
 
     this.setup = function () {
 
@@ -177,7 +182,7 @@ function hub() {
         for (let i = 0; i < items.length; i++) {
             const element = items[i];
             console.log(element)
-            loadedImages.push(loadImage(element.image))
+            loadedItems.push(loadImage(element.image))
 
         }
 
@@ -187,7 +192,7 @@ function hub() {
     this.draw = function () {
         imageMode(CENTER)
         image(background_png, width / 2, 750, background_png.width / 3, background_png.height / 3);
-        drawHUD();
+        drawHUD(loadedItems);
         drawName(name)
         if (debug) {
             debugExits(exits);
@@ -197,7 +202,7 @@ function hub() {
 
         for (let i = 0; i < items.length; i++) {
             const element = items[i];
-            image(loadedImages[i], element.x, element.y, element.width, element.height)
+            image(loadedItems[i], element.x, element.y, element.width, element.height)
 
         }
 

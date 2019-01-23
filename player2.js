@@ -5,7 +5,9 @@ let ship = {
     x: 0,
     y: 0,
     rot: -90,
-    strikes: 0
+    strikes: 0,
+    width: 100,
+    height: 100 
 }
 let shipImage
 let shipThrust_image
@@ -17,18 +19,25 @@ function drawHUD() {
     pop()
 }
 
-function doesCollide(rect, asteroidX, asteroidY) {
-    var isCollision = false;
-    let x = steroidX;
-    let y = asteroidY;
-    var left = rect.x - rect.width / 2,
-        right = rect.x + rect.width / 2;
-    var top = rect.y + rect.height / 2,
-        bottom = rect.y - rect.height / 2;
+function checkShipCollision(asteroid) {
+    let isCollision = false;
 
-    if (x <= right && x >= left && y <= top && y >= bottom) {
-        isCollision = true;
-    }
+    let shipLeft = ship.x - ship.width / 2,
+        shipRight = ship.x + ship.width / 2,
+        shipTop = ship.y + ship.height / 2,
+        shipBottom = ship.y - ship.height / 2;
+
+    let asteroidLeft = asteroid.x - asteroid.width / 2,
+        asteroidRight = asteroid.x + asteroid.width / 2,
+        asteroidTop = asteroid.y + asteroid.height / 2,
+        asteroidBottom = asteroid.y - asteroid.height / 2;
+
+    if(asteroidRight >= shipLeft && 
+        asteroidLeft <= shipRight && 
+        asteroidBottom <= shipTop &&
+        asteroidTop >= shipBottom) {
+            isCollision = true;
+        }
 
     return isCollision;
 }
@@ -56,10 +65,10 @@ function draw() {
        image(shipImage, 0, 0, 100,100)
     }
     pop()
-    for (var s = 0; s != null; s++) {
+    for (var s = 0; s < Asteroids.length; s++) {
       image(ast_image, Asteroid.x, Asteroid.y, Asteroid.width, Asteroid.height);
       asteroidFall()
-      collisonCheck()
+      checkShipCollision(Asteroid)
     }
 
     if(keyIsPressed && key === "a") {
@@ -90,6 +99,8 @@ var Asteroid = {
   width : 15,
   height : 10
 };
+
+
 // Asteroids[Asteroid]
 var Asteroids = [Asteroid];
 // draw() {
@@ -107,11 +118,11 @@ function asteroidFall() {
 //    }
 function collisonCheck() {
   for (var i = 0; i < Asteroids.length; i++) {
-    if (doesCollide(Asteroids[i]) && ship.strikes < 3) {
+    if (checkShipCollision(Asteroids[i]) && ship.strikes < 3) {
         ship.strikes++
         console.log('!')
     }
-    else if (doesCollide() && ship.strikes == 3) {
+    else if (checkShipCollision() && ship.strikes == 3) {
       s=null;
       function drawWords(x) {
         fill('red');
