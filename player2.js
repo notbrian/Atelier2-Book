@@ -100,7 +100,7 @@ function setup() {
     background_png = loadImage("./assets/background.png")
     shipImage = loadImage("./assets/ship.png")
     shipThrust_image = loadImage("./assets/shipThrust.png")
-    HUD = loadImage("./assets/pilotHUD.png")
+    HUD = loadImage("./assets/PilotHUD.png")
     ast_images.push(loadImage("./assets/Meteorite1.png"))
     ast_images.push(loadImage("./assets/Meteorite2.png"))
     ast_images.push(loadImage("./assets/Meteorite3.png"))
@@ -214,32 +214,6 @@ function mousePressed() {
     console.log(mouseX, mouseY);
 
 }
-
-//        For each Asteroid, subtract the y value by 5
-//    }
-
-
-//    Check if the asteroid is hitting the ship {
-//        If it is, then take a strike off the ship
-//    }
-// function collisonCheck() {
-//     for (var i = 0; i < Asteroids.length; i++) {
-//         if (checkShipCollision(Asteroids[i]) && ship.strikes < 3) {
-//             ship.strikes++
-//             console.log('!')
-//         } else if (checkShipCollision() && ship.strikes == 3) {
-//             s = null;
-
-//       
-
-//         } else {
-
-//         };
-//     };
-// }
-
-
-// }
 
 function drawWords(x) {
     push()
