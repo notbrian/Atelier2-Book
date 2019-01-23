@@ -7,10 +7,58 @@ let ship = {
     rot: -90,
     strikes: 0,
     width: 100,
-    height: 100 
+    height: 100
 }
 let shipImage
 let shipThrust_image
+let gameOver = false;
+
+// var Asteroid = {
+//     x: 400,
+//     y: 0,
+//     width: 50,
+//     height: 50
+// };
+
+
+class Asteroid {
+    constructor(x, type, width, height) {
+        this.x = x;
+        this.y = -100;
+        this.type = type
+        this.width = width;
+        this.height = height;
+    }
+
+    update() {
+        this.y += 2
+
+        if (this.y > height + this.height) {
+            let index = Asteroids.indexOf(this);
+            Asteroids.splice(index, 1);
+
+
+        }
+
+        if (checkShipCollision(this)) {
+
+            if (ship.strikes >= 3) {
+                return
+            }
+
+            console.log("collision")
+            let index = Asteroids.indexOf(this);
+            Asteroids.splice(index, 1);
+
+            ship.strikes++;
+        }
+    }
+}
+
+let Asteroids = []
+
+let alertOpacity = 0
+let colorFlip = false;
 
 function drawHUD() {
     push()
@@ -32,15 +80,19 @@ function checkShipCollision(asteroid) {
         asteroidTop = asteroid.y + asteroid.height / 2,
         asteroidBottom = asteroid.y - asteroid.height / 2;
 
-    if(asteroidRight >= shipLeft && 
-        asteroidLeft <= shipRight && 
+    if (asteroidRight >= shipLeft &&
+        asteroidLeft <= shipRight &&
         asteroidBottom <= shipTop &&
         asteroidTop >= shipBottom) {
-            isCollision = true;
-        }
-
+        isCollision = true;
+        console.log("collision")
+    }
     return isCollision;
 }
+
+let ast_images = [];
+
+let HUD;
 
 function setup() {
     createCanvas(800, 600);
@@ -48,67 +100,121 @@ function setup() {
     background_png = loadImage("./assets/background.png")
     shipImage = loadImage("./assets/ship.png")
     shipThrust_image = loadImage("./assets/shipThrust.png")
-    ast_image = loadImage("./assets/Meteorite1.png")
+    HUD = loadImage("./assets/pilotHUD.png")
+    ast_images.push(loadImage("./assets/Meteorite1.png"))
+    ast_images.push(loadImage("./assets/Meteorite2.png"))
+    ast_images.push(loadImage("./assets/Meteorite3.png"))
 
-    ship.x = width /2;
-    ship.y = 520;
+    ship.x = width / 2;
+    ship.y = 400;
+
+    setInterval(function () {
+        let type = Math.round(random(0, 2))
+        Asteroids.push(new Asteroid(random(-100, width + 100), type, ast_images[type].width / 13, ast_images[type].height / 13))
+
+    }, 1000)
+
 }
+
 function draw() {
-    image(background_png, 0,0)
-    push()
-    translate(ship.x,  ship.y)
-    rotate(radians(-90))
+    imageMode(CORNER)
+    image(background_png, 0, 0)
+
     imageMode(CENTER)
-    if(keyIsPressed ) {
-       image(shipThrust_image, 0, 0, 120,100)
-    } else {
-       image(shipImage, 0, 0, 100,100)
-    }
-    pop()
+
     for (var s = 0; s < Asteroids.length; s++) {
-      image(ast_image, Asteroid.x, Asteroid.y, Asteroid.width, Asteroid.height);
-      asteroidFall()
-      checkShipCollision(Asteroid)
+
+        image(ast_images[Asteroids[s].type],
+            Asteroids[s].x,
+            Asteroids[s].y,
+            Asteroids[s].width,
+            Asteroids[s].height);
+
+        stroke(255, 0, 0, alertOpacity)
+        fill(0, 0, 0, 0)
+        rectMode(CENTER)
+        rect(Asteroids[s].x,
+            Asteroids[s].y,
+            Asteroids[s].width,
+            Asteroids[s].height)
+
+        Asteroids[s].update();
     }
 
-    if(keyIsPressed && key === "a") {
-        ship.x -= 3;
-    }
-    if(keyIsPressed && key === "d") {
-        ship.x += 3;
+    if (!gameOver) {
+        push()
+        translate(ship.x, ship.y)
+        rotate(radians(-90))
+        stroke(255, 0, 0, alertOpacity)
+        fill(0, 0, 0, 0)
+        rectMode(CENTER)
+        rect(0, 0, ship.width, ship.height)
+        if (keyIsPressed) {
+            image(shipThrust_image, -8, 0, 120, 100)
+        } else {
+            image(shipImage, 0, 0, 100, 100)
+        }
+        pop()
+
+
+        // Movement
+
+        if (keyIsPressed && key === "a") {
+            ship.x -= 3;
+        }
+        if (keyIsPressed && key === "d") {
+            ship.x += 3;
+        }
+
+        if (ship.x <= 0) {
+            ship.x = 0
+        }
+
+        if (ship.x >= width) {
+            ship.x = width
+        }
     }
 
-    if(ship.x <= 0 ) {
-        ship.x = 0
+    imageMode(CORNER)
+    image(HUD, 0, 0)
+
+
+    let strikes = ""
+    for (let i = 0; i < ship.strikes; i++) {
+        strikes += "X"
+    }
+    push()
+    textSize(40)
+    fill(255, 0, 0)
+    textAlign(LEFT)
+    text(strikes, 502, 55)
+    push()
+    fill(255, 0, 0, alertOpacity)
+    text("Asteroid Field!", 400, 560)
+    pop()
+    pop()
+
+    if (ship.strikes >= 3) {
+        textAlign(CENTER);
+        drawWords();
     }
 
-    if(ship.x >= width ) {
-        ship.x = width
+    if (alertOpacity > 255 || alertOpacity < 0) {
+        colorFlip = !colorFlip
     }
-    textAlign(CENTER);
-    drawWords(width * 0.5);
+
+    if (colorFlip) {
+        alertOpacity -= 5
+    } else {
+        alertOpacity += 5
+    }
 }
 
 function mousePressed() {
     console.log(mouseX, mouseY);
+
 }
 
-var Asteroid = {
-  x : Math.random(0,799),
-  y : 0,
-  width : 15,
-  height : 10
-};
-
-
-// Asteroids[Asteroid]
-var Asteroids = [Asteroid];
-// draw() {
-function asteroidFall() {
-         for (var i = 0; i < Asteroids.length; i++) {
-              Asteroids[i].y = Asteroids[i].y + 5
-         }
-        }
 //        For each Asteroid, subtract the y value by 5
 //    }
 
@@ -116,25 +222,30 @@ function asteroidFall() {
 //    Check if the asteroid is hitting the ship {
 //        If it is, then take a strike off the ship
 //    }
-function collisonCheck() {
-  for (var i = 0; i < Asteroids.length; i++) {
-    if (checkShipCollision(Asteroids[i]) && ship.strikes < 3) {
-        ship.strikes++
-        console.log('!')
-    }
-    else if (checkShipCollision() && ship.strikes == 3) {
-      s=null;
-      function drawWords(x) {
-        fill('red');
-        text('GAME OVER', width * 0.5, height * 0.5);
-}
+// function collisonCheck() {
+//     for (var i = 0; i < Asteroids.length; i++) {
+//         if (checkShipCollision(Asteroids[i]) && ship.strikes < 3) {
+//             ship.strikes++
+//             console.log('!')
+//         } else if (checkShipCollision() && ship.strikes == 3) {
+//             s = null;
 
-    }
-    else {
+//       
 
-    };
-  };
-}
+//         } else {
+
+//         };
+//     };
+// }
 
 
 // }
+
+function drawWords(x) {
+    push()
+    fill('red');
+    textSize(50)
+    text('GAME OVER', width * 0.5, height * 0.5);
+    pop()
+    gameOver = true;
+}
