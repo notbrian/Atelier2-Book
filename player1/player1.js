@@ -14,14 +14,14 @@ var pubnub = new PubNub({
 })
 
 pubnub.addListener({ message: readIncoming });
-pubnub.subscribe({channels: ["thrusters"]})
+pubnub.subscribe({channels: ["thrusters", "gameOver"]})
 
 
 
 var mgr;
 const debug = true;
-
-
+let thrust = "stop";
+let gameOver = false;
 let inventory = [];
 
 // Class constructors for data management
@@ -84,7 +84,11 @@ function setup() {
 
 function draw() {
     background(255);
-    mgr.draw();
+    if(gameOver) {
+        drawWords();
+    } else {
+        mgr.draw();
+    }
 }
 
 function mousePressed() {
@@ -169,10 +173,38 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
   { let direction = inMessage.message.direction
     console.log(direction)
 
-    if(direction === "up") {
-        Hammer.y -= 5
-    } else if(direction === "down"){
-        Hammer.y +=5
-    }
+    thrust = direction;
   }
+
+  if(inMessage.channel == "gameOver") {
+      if(inMessage.message.gameOver) {
+        gameOver = true;
+      }
+  }
+}
+
+function applyThrust(items) {
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        item.y += random(0, 0.5)    
+        if(thrust === "up") {
+            item.x -= random(-2,2)
+            item.y -= random(2, 6);
+
+        } else if(thrust === "down") {
+            item.x += random(-2,2)
+            item.y += random(2,6);
+        } else {
+            return;
+        }
+    }
+}
+
+function drawWords() {
+    push()
+    fill('red');
+    textSize(50)
+    text('GAME OVER', width * 0.5, height * 0.5);
+    pop()
+
 }

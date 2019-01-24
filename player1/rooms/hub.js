@@ -20,7 +20,6 @@ function hub() {
     this.draw = function () {
         imageMode(CORNER);
         image(background_png, 0, 0, background_png.width / 3, background_png.height / 3);
-        drawHUD(name);
         if (debug) {
             debugExits(exits);
         }
@@ -33,10 +32,16 @@ function hub() {
             }
             image(item.image, item.x, item.y, item.width, item.height);
         }
+
+        drawHUD(name);
+
+        applyThrust(items);
+
     };
     this.mousePressed = function () {
         checkExits(exits);
         checkItems(items);
         // soon check exits too
     };
+
 }
