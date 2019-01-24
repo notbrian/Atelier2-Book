@@ -35,3 +35,14 @@ let Screw = new Item("Screw", "../assets/screw.png"
  530, 240, 673/5, 1183/5)
 
  let broken_toilet_img
+
+
+ class Crack extends Item {
+    constructor(name, image, description, x, y, width, height) {
+        super(name, image, description, x, y, width, height)
+    }
+}
+
+let crack_1 = new Crack("Crack", "../assets/crack1.png"
+,"You gotta fix it with something",
+530, 240, 673/5, 1183/5)

@@ -19,7 +19,7 @@ pubnub.subscribe({channels: ["thrusters", "gameOver"]})
 
 
 var mgr;
-const debug = true;
+const debug = false;
 let thrust = "stop";
 let gameOver = false;
 let inventory = [];
@@ -79,7 +79,7 @@ function setup() {
     Screwdriver.image = loadImage(Screwdriver.image)
     toilet_item.image = loadImage(toilet_item.image)
     broken_toilet_img = loadImage('../assets/toiletBroken.png')
-    
+    crack_1.image = loadImage(crack_1.image)
 }
 
 function draw() {
@@ -184,9 +184,10 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 }
 
 function applyThrust(items) {
+
     for (let i = 0; i < items.length; i++) {
         const item = items[i];
-        item.y += random(0, 0.5)    
+        item.y += random(0, 0.5)
         if(thrust === "up") {
             item.x -= random(-2,2)
             item.y -= random(2, 6);
@@ -194,8 +195,8 @@ function applyThrust(items) {
         } else if(thrust === "down") {
             item.x += random(-2,2)
             item.y += random(2,6);
-        } else {
-            return;
+        } else if(thrust=== "stop") {
+            
         }
     }
 }

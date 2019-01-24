@@ -60,14 +60,20 @@ function room2() {
 
         }
 
-        
+        applyThrust(items);
+
     };
     this.mousePressed = function () {
         checkExits(exits);
         checkItems(items);
 
-
+        // Basic Fixable Code
         if(doesCollide(toilet_item)) {
+
+            if(!toiletBroken) {
+                alert("You can't improve this toilet anymore.") 
+                return
+            }
             let toolable = false;
             for (let i = 0; i < inventory.length; i++) {
                 const item = inventory[i];
@@ -77,7 +83,6 @@ function room2() {
                     break;
                 }
             }
-            
             if(toolable) {
                 alert("Fixing the toilet with the duct tape!")
                 toiletBroken = false;

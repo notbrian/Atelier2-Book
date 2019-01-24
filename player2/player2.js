@@ -4,8 +4,12 @@ var pubnub = new PubNub({
     ssl: true
 })
 
-pubnub.addListener({ message: readIncoming });
-pubnub.subscribe({channels: ["asteroidPos"]})
+pubnub.addListener({
+    message: readIncoming
+});
+pubnub.subscribe({
+    channels: ["asteroidPos"]
+})
 
 
 let background_png;
@@ -22,6 +26,7 @@ let ship = {
 let shipImage
 let shipThrust_image
 let gameOver = false;
+let timer = 180;
 
 // var Asteroid = {
 //     x: 400,
@@ -71,6 +76,7 @@ let Asteroids = []
 let alertOpacity = 0
 let colorFlip = false;
 let nextAsteroidPos = 0;
+
 function drawHUD() {
     push()
     imageMode(CORNER)
@@ -124,7 +130,7 @@ function setup() {
         // Asteroids.push(new Asteroid(random(-100, width + 100), type, ast_images[type].width / 13, ast_images[type].height / 13))
         Asteroids.push(new Asteroid(nextAsteroidPos, type, ast_images[type].width / 13, ast_images[type].height / 13))
 
-    }, 1000)
+    }, 1200)
 
 }
 
@@ -186,30 +192,49 @@ function draw() {
         if (ship.x >= width) {
             ship.x = width
         }
-    }
-
-    imageMode(CORNER)
-    image(HUD, 0, 0)
 
 
-    let strikes = ""
-    for (let i = 0; i < ship.strikes; i++) {
-        strikes += "X"
-    }
-    push()
-    textSize(40)
-    fill(255, 0, 0)
-    textAlign(LEFT)
-    text(strikes, 502, 55)
-    push()
-    fill(255, 0, 0, alertOpacity)
-    text("Asteroid Field!", 400, 560)
-    pop()
-    pop()
+        imageMode(CORNER)
+        image(HUD, 0, 0)
 
-    if (ship.strikes >= 3) {
-        textAlign(CENTER);
-        drawWords();
+        if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+            timer--;
+        }
+
+        push()
+        textSize(30)
+        fill(255, 0, 0)
+        noStroke();
+        let timerText = sec2human(timer)
+        text(timerText, 489, 50);
+        pop()
+
+        if (timer == 0) {
+            drawWords();
+        }
+
+
+
+        let strikes = ""
+        for (let i = 0; i < ship.strikes; i++) {
+            strikes += "X"
+        }
+        push()
+        textSize(40)
+        fill(255, 0, 0)
+        textAlign(LEFT)
+        text(strikes, 577, 55)
+        push()
+        fill(255, 0, 0, alertOpacity)
+        text("Asteroid Field!", 400, 560)
+        pop()
+        pop()
+
+        if (ship.strikes >= 3) {
+            drawWords();
+        }
+
+
     }
 
     if (alertOpacity > 255 || alertOpacity < 0) {
@@ -228,11 +253,11 @@ function mousePressed() {
 }
 
 function keyPressed() {
-    if(key === 'a') {
+    if (key === 'a') {
         sendThrust("up")
-    } 
+    }
 
-    if(key === 'd') {
+    if (key === 'd') {
         sendThrust("down")
     }
 
@@ -245,42 +270,41 @@ function keyReleased() {
 
 function drawWords() {
     push()
+    textAlign(CENTER);
     fill('red');
     textSize(50)
     text('GAME OVER', width * 0.5, height * 0.5);
     pop()
-    if(!gameOver) {
+    if (!gameOver) {
         pubnub.publish({
-            channel : "gameOver",
-            message: { 
+            channel: "gameOver",
+            message: {
                 gameOver: true
             }
-            }, function (status, response) {
-                console.log(status, response)
-            }
-        );
+        }, function (status, response) {
+            console.log(status, response)
+        });
     }
     gameOver = true;
-    
+
 }
 
 function sendThrust(direction) {
     pubnub.publish({
-        channel : "thrusters",
-        message: { 
+        channel: "thrusters",
+        message: {
             direction: direction
         }
-        }, function (status, response) {
-            console.log(status, response)
-        }
-    );
-    
+    }, function (status, response) {
+        console.log(status, response)
+    });
+
 }
 
 function sendShipPos() {
     pubnub.publish({
-        channel : "shipData",
-        message: { 
+        channel: "shipData",
+        message: {
             ship: {
                 x: ship.x,
                 y: ship.y,
@@ -288,20 +312,28 @@ function sendShipPos() {
                 height: ship.height
             }
         }
-        }, function (status, response) {
-            console.log(status, response)
-        }
-    );
-    
+    }, function (status, response) {
+        console.log(status, response)
+    });
+
 }
 
 
 
 function readIncoming(inMessage) //when new data comes in it triggers this function, 
-{                               // this works becsuse we subscribed to the channel in setup()
-  
-  // simple error check to match the incoming to the channelName
-  if(inMessage.channel == "asteroidPos")
-  { nextAsteroidPos = inMessage.message.asteroidX
-  }
+{ // this works becsuse we subscribed to the channel in setup()
+
+    // simple error check to match the incoming to the channelName
+    if (inMessage.channel == "asteroidPos") {
+        nextAsteroidPos = inMessage.message.asteroidX
+    }
+}
+
+function sec2human(seconds) {
+    sec = seconds % 60;
+    min = parseInt(seconds / 60);
+    if (sec.toString().length == 1) { // padding
+        sec = "0" + sec;
+    }
+    return min + ":" + sec;
 }
