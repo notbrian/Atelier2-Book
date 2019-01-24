@@ -4,6 +4,9 @@ var pubnub = new PubNub({
     ssl: true
 })
 
+pubnub.addListener({ message: readIncoming });
+pubnub.subscribe({channels: ["asteroidPos"]})
+
 
 let background_png;
 
@@ -26,6 +29,7 @@ let gameOver = false;
 //     width: 50,
 //     height: 50
 // };
+
 
 
 class Asteroid {
@@ -66,7 +70,7 @@ let Asteroids = []
 
 let alertOpacity = 0
 let colorFlip = false;
-
+let nextAsteroidPos = 0;
 function drawHUD() {
     push()
     imageMode(CORNER)
@@ -117,7 +121,8 @@ function setup() {
 
     setInterval(function () {
         let type = Math.round(random(0, 2))
-        Asteroids.push(new Asteroid(random(-100, width + 100), type, ast_images[type].width / 13, ast_images[type].height / 13))
+        // Asteroids.push(new Asteroid(random(-100, width + 100), type, ast_images[type].width / 13, ast_images[type].height / 13))
+        Asteroids.push(new Asteroid(nextAsteroidPos, type, ast_images[type].width / 13, ast_images[type].height / 13))
 
     }, 1000)
 
@@ -168,11 +173,9 @@ function draw() {
 
         if (keyIsPressed && key === "a") {
             ship.x -= 3;
-            sendThrust("up")
         }
         if (keyIsPressed && key === "d") {
             ship.x += 3;
-            sendThrust("down")
 
         }
 
@@ -224,13 +227,41 @@ function mousePressed() {
     console.log(mouseX, mouseY);
 }
 
-function drawWords(x) {
+function keyPressed() {
+    if(key === 'a') {
+        sendThrust("up")
+    } 
+
+    if(key === 'd') {
+        sendThrust("down")
+    }
+
+}
+
+function keyReleased() {
+    sendThrust("stop")
+    sendShipPos();
+}
+
+function drawWords() {
     push()
     fill('red');
     textSize(50)
     text('GAME OVER', width * 0.5, height * 0.5);
     pop()
+    if(!gameOver) {
+        pubnub.publish({
+            channel : "gameOver",
+            message: { 
+                gameOver: true
+            }
+            }, function (status, response) {
+                console.log(status, response)
+            }
+        );
+    }
     gameOver = true;
+    
 }
 
 function sendThrust(direction) {
@@ -244,4 +275,33 @@ function sendThrust(direction) {
         }
     );
     
+}
+
+function sendShipPos() {
+    pubnub.publish({
+        channel : "shipData",
+        message: { 
+            ship: {
+                x: ship.x,
+                y: ship.y,
+                width: ship.width,
+                height: ship.height
+            }
+        }
+        }, function (status, response) {
+            console.log(status, response)
+        }
+    );
+    
+}
+
+
+
+function readIncoming(inMessage) //when new data comes in it triggers this function, 
+{                               // this works becsuse we subscribed to the channel in setup()
+  
+  // simple error check to match the incoming to the channelName
+  if(inMessage.channel == "asteroidPos")
+  { nextAsteroidPos = inMessage.message.asteroidX
+  }
 }
