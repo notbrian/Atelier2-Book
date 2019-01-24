@@ -1,3 +1,9 @@
+var pubnub = new PubNub({
+    subscribeKey: "pub-c-8976c01b-d32d-4b09-9390-de374e663845",
+    publishKey: "sub-c-63e6e39a-1866-11e9-af54-8afa0e558510",
+    ssl: true
+})
+
 let background_png;
 
 
@@ -97,13 +103,13 @@ let HUD;
 function setup() {
     createCanvas(800, 600);
 
-    background_png = loadImage("./assets/background.png")
-    shipImage = loadImage("./assets/ship.png")
-    shipThrust_image = loadImage("./assets/shipThrust.png")
-    HUD = loadImage("./assets/PilotHUD.png")
-    ast_images.push(loadImage("./assets/Meteorite1.png"))
-    ast_images.push(loadImage("./assets/Meteorite2.png"))
-    ast_images.push(loadImage("./assets/Meteorite3.png"))
+    background_png = loadImage("../assets/background.png")
+    shipImage = loadImage("../assets/ship.png")
+    shipThrust_image = loadImage("../assets/shipThrust.png")
+    HUD = loadImage("../assets/PilotHUD.png")
+    ast_images.push(loadImage("../assets/Meteorite1.png"))
+    ast_images.push(loadImage("../assets/Meteorite2.png"))
+    ast_images.push(loadImage("../assets/Meteorite3.png"))
 
     ship.x = width / 2;
     ship.y = 400;
@@ -212,6 +218,17 @@ function draw() {
 
 function mousePressed() {
     console.log(mouseX, mouseY);
+
+
+    pubnub.publish({
+            channel: "thrusters",
+            message: {
+                direction: "left"
+            }
+        }, function (status, response) {
+            console.log(status, response)
+        }
+    );
 
 }
 
