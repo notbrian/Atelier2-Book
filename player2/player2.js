@@ -26,7 +26,7 @@ let ship = {
 let shipImage
 let shipThrust_image
 let gameOver = false;
-let timer = 180;
+let timer = 90;
 
 // var Asteroid = {
 //     x: 400,
