@@ -1,8 +1,9 @@
 var pubnub = new PubNub({
-    subscribeKey: "pub-c-8976c01b-d32d-4b09-9390-de374e663845",
-    publishKey: "sub-c-63e6e39a-1866-11e9-af54-8afa0e558510",
+    subscribeKey: "sub-c-54b88780-135b-11e9-9cda-0ee81137d4bc",
+    publishKey: "pub-c-4ef47c2a-486e-4de3-993a-0eea99b708a8",
     ssl: true
 })
+
 
 let background_png;
 
@@ -167,9 +168,12 @@ function draw() {
 
         if (keyIsPressed && key === "a") {
             ship.x -= 3;
+            sendThrust("up")
         }
         if (keyIsPressed && key === "d") {
             ship.x += 3;
+            sendThrust("down")
+
         }
 
         if (ship.x <= 0) {
@@ -218,18 +222,6 @@ function draw() {
 
 function mousePressed() {
     console.log(mouseX, mouseY);
-
-
-    pubnub.publish({
-            channel: "thrusters",
-            message: {
-                direction: "left"
-            }
-        }, function (status, response) {
-            console.log(status, response)
-        }
-    );
-
 }
 
 function drawWords(x) {
@@ -239,4 +231,17 @@ function drawWords(x) {
     text('GAME OVER', width * 0.5, height * 0.5);
     pop()
     gameOver = true;
+}
+
+function sendThrust(direction) {
+    pubnub.publish({
+        channel : "thrusters",
+        message: { 
+            direction: direction
+        }
+        }, function (status, response) {
+            console.log(status, response)
+        }
+    );
+    
 }

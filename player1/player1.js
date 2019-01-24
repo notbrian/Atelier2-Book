@@ -5,6 +5,19 @@
 
 // this is the engineer file yo
 
+
+
+var pubnub = new PubNub({
+    subscribeKey: "sub-c-54b88780-135b-11e9-9cda-0ee81137d4bc",
+    publishKey: "pub-c-4ef47c2a-486e-4de3-993a-0eea99b708a8",
+    ssl: true
+})
+
+pubnub.addListener({ message: readIncoming });
+pubnub.subscribe({channels: ["thrusters"]})
+
+
+
 var mgr;
 const debug = true;
 
@@ -56,7 +69,7 @@ function setup() {
 
     background_png = loadImage("../assets/basic_space.png");
     HUD = loadImage("../assets/EngineerHUD.png")
-    mgr.showScene(room2);
+    mgr.showScene(hub);
     textAlign(CENTER);
 
     Hammer.image = loadImage(Hammer.image)
@@ -145,4 +158,21 @@ function drawHUD(name) {
     textSize(35);
     text(name, 283, 540);
     pop()
+}
+
+
+function readIncoming(inMessage) //when new data comes in it triggers this function, 
+{                               // this works becsuse we subscribed to the channel in setup()
+  
+  // simple error check to match the incoming to the channelName
+  if(inMessage.channel == "thrusters")
+  { let direction = inMessage.message.direction
+    console.log(direction)
+
+    if(direction === "up") {
+        Hammer.y -= 5
+    } else if(direction === "down"){
+        Hammer.y +=5
+    }
+  }
 }
