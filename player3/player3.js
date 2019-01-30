@@ -97,3 +97,4 @@ function drawWords() {
   text('GAME OVER', width * 0.5, height * 0.5);
   pop();
 }
+// test
