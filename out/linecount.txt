@@ -1,0 +1,212 @@
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2019-01-29 18:28:21
+count workspace : /Users/brian/Documents/Coding/Atelier2-Book
+total files : 41
+total code lines : 936
+total comment lines : 139
+total blank lines : 226
+
+.gitignore, code is 1, comment is 0, blank is 0.
+assets/background.png, it is a binary file.
+assets/basic_space.png, it is a binary file.
+assets/crack1.png, it is a binary file.
+assets/crack2.png, it is a binary file.
+assets/duct_tape.png, it is a binary file.
+assets/Ducttape.png, it is a binary file.
+assets/EngineerHUD.png, it is a binary file.
+assets/EngineerIcon.png, it is a binary file.
+assets/Hammer.png, it is a binary file.
+assets/keypad.png, it is a binary file.
+assets/Meteorite1.png, it is a binary file.
+assets/Meteorite2.png, it is a binary file.
+assets/Meteorite3.png, it is a binary file.
+assets/missioncontrolicon.png, it is a binary file.
+assets/PilotHUD.png, it is a binary file.
+assets/piloticon.png, it is a binary file.
+assets/Satellite.png, it is a binary file.
+assets/screw.png, it is a binary file.
+assets/screwdriver.png, it is a binary file.
+assets/ship.png, it is a binary file.
+assets/shipThrust.png, it is a binary file.
+assets/shrapnel.png, it is a binary file.
+assets/toilet.png, it is a binary file.
+assets/toiletBroken.png, it is a binary file.
+Book.code-workspace, code is 8, comment is 0, blank is 0.
+jsconfig.json, code is 2, comment is 0, blank is 1.
+player1/items.js, code is 35, comment is 2, blank is 11.
+player1/player1.html, code is 20, comment is 0, blank is 4.
+player1/player1.js, code is 155, comment is 64, blank is 26.
+player1/rooms/hub.js, code is 40, comment is 4, blank is 6.
+player1/rooms/room1.js, code is 77, comment is 2, blank is 11.
+player1/rooms/room2.js, code is 77, comment is 3, blank is 14.
+player2/player2.html, code is 15, comment is 0, blank is 7.
+player2/player2.js, code is 256, comment is 13, blank is 74.
+player3/player3.html, code is 15, comment is 0, blank is 6.
+player3/player3.js, code is 87, comment is 3, blank is 18.
+README.md, code is 8, comment is 3, blank is 4.
+scripts/p5.min.js, code is 1, comment is 1, blank is 1.
+scripts/scenemanager.js, code is 127, comment is 42, blank is 36.
+style.css, code is 12, comment is 2, blank is 7.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2019-01-29 18:39:40
+count workspace : /Users/brian/Documents/Coding/Atelier2-Book
+total files : 41
+total code lines : 946
+total comment lines : 148
+total blank lines : 225
+
+.gitignore, code is 1, comment is 0, blank is 0.
+assets/background.png, it is a binary file.
+assets/basic_space.png, it is a binary file.
+assets/crack1.png, it is a binary file.
+assets/crack2.png, it is a binary file.
+assets/duct_tape.png, it is a binary file.
+assets/Ducttape.png, it is a binary file.
+assets/EngineerHUD.png, it is a binary file.
+assets/EngineerIcon.png, it is a binary file.
+assets/Hammer.png, it is a binary file.
+assets/keypad.png, it is a binary file.
+assets/Meteorite1.png, it is a binary file.
+assets/Meteorite2.png, it is a binary file.
+assets/Meteorite3.png, it is a binary file.
+assets/missioncontrolicon.png, it is a binary file.
+assets/PilotHUD.png, it is a binary file.
+assets/piloticon.png, it is a binary file.
+assets/Satellite.png, it is a binary file.
+assets/screw.png, it is a binary file.
+assets/screwdriver.png, it is a binary file.
+assets/ship.png, it is a binary file.
+assets/shipThrust.png, it is a binary file.
+assets/shrapnel.png, it is a binary file.
+assets/toilet.png, it is a binary file.
+assets/toiletBroken.png, it is a binary file.
+Book.code-workspace, code is 8, comment is 0, blank is 0.
+jsconfig.json, code is 2, comment is 0, blank is 1.
+player1/items.js, code is 46, comment is 8, blank is 16.
+player1/player1.html, code is 20, comment is 0, blank is 4.
+player1/player1.js, code is 154, comment is 67, blank is 20.
+player1/rooms/hub.js, code is 40, comment is 4, blank is 6.
+player1/rooms/room1.js, code is 77, comment is 2, blank is 11.
+player1/rooms/room2.js, code is 77, comment is 3, blank is 14.
+player2/player2.html, code is 15, comment is 0, blank is 7.
+player2/player2.js, code is 256, comment is 13, blank is 74.
+player3/player3.html, code is 15, comment is 0, blank is 6.
+player3/player3.js, code is 87, comment is 3, blank is 18.
+README.md, code is 8, comment is 3, blank is 4.
+scripts/p5.min.js, code is 1, comment is 1, blank is 1.
+scripts/scenemanager.js, code is 127, comment is 42, blank is 36.
+style.css, code is 12, comment is 2, blank is 7.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2019-01-29 21:05:53
+count workspace : /Users/brian/Documents/Coding/Atelier2-Book
+total files : 41
+total code lines : 953
+total comment lines : 241
+total blank lines : 144
+
+.gitignore, code is 1, comment is 0, blank is 0.
+assets/background.png, it is a binary file.
+assets/basic_space.png, it is a binary file.
+assets/crack1.png, it is a binary file.
+assets/crack2.png, it is a binary file.
+assets/duct_tape.png, it is a binary file.
+assets/Ducttape.png, it is a binary file.
+assets/EngineerHUD.png, it is a binary file.
+assets/EngineerIcon.png, it is a binary file.
+assets/Hammer.png, it is a binary file.
+assets/keypad.png, it is a binary file.
+assets/Meteorite1.png, it is a binary file.
+assets/Meteorite2.png, it is a binary file.
+assets/Meteorite3.png, it is a binary file.
+assets/missioncontrolicon.png, it is a binary file.
+assets/PilotHUD.png, it is a binary file.
+assets/piloticon.png, it is a binary file.
+assets/Satellite.png, it is a binary file.
+assets/screw.png, it is a binary file.
+assets/screwdriver.png, it is a binary file.
+assets/ship.png, it is a binary file.
+assets/shipThrust.png, it is a binary file.
+assets/shrapnel.png, it is a binary file.
+assets/toilet.png, it is a binary file.
+assets/toiletBroken.png, it is a binary file.
+Book.code-workspace, code is 8, comment is 0, blank is 0.
+jsconfig.json, code is 2, comment is 0, blank is 1.
+player1/items.js, code is 46, comment is 9, blank is 16.
+player1/player1.html, code is 20, comment is 0, blank is 4.
+player1/player1.js, code is 154, comment is 67, blank is 20.
+player1/rooms/hub.js, code is 41, comment is 20, blank is 4.
+player1/rooms/room1.js, code is 79, comment is 10, blank is 6.
+player1/rooms/room2.js, code is 77, comment is 7, blank is 5.
+player2/player2.html, code is 15, comment is 0, blank is 7.
+player2/player2.js, code is 260, comment is 76, blank is 14.
+player3/player3.html, code is 15, comment is 0, blank is 6.
+player3/player3.js, code is 87, comment is 4, blank is 13.
+README.md, code is 8, comment is 3, blank is 4.
+scripts/p5.min.js, code is 1, comment is 1, blank is 1.
+scripts/scenemanager.js, code is 127, comment is 42, blank is 36.
+style.css, code is 12, comment is 2, blank is 7.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2019-01-29 21:17:51
+count workspace : /Users/brian/Documents/Coding/Atelier2-Book
+total files : 41
+total code lines : 942
+total comment lines : 254
+total blank lines : 137
+
+.gitignore, code is 1, comment is 0, blank is 0.
+assets/background.png, it is a binary file.
+assets/basic_space.png, it is a binary file.
+assets/crack1.png, it is a binary file.
+assets/crack2.png, it is a binary file.
+assets/duct_tape.png, it is a binary file.
+assets/Ducttape.png, it is a binary file.
+assets/EngineerHUD.png, it is a binary file.
+assets/EngineerIcon.png, it is a binary file.
+assets/Hammer.png, it is a binary file.
+assets/keypad.png, it is a binary file.
+assets/Meteorite1.png, it is a binary file.
+assets/Meteorite2.png, it is a binary file.
+assets/Meteorite3.png, it is a binary file.
+assets/missioncontrolicon.png, it is a binary file.
+assets/PilotHUD.png, it is a binary file.
+assets/piloticon.png, it is a binary file.
+assets/Satellite.png, it is a binary file.
+assets/screw.png, it is a binary file.
+assets/screwdriver.png, it is a binary file.
+assets/ship.png, it is a binary file.
+assets/shipThrust.png, it is a binary file.
+assets/shrapnel.png, it is a binary file.
+assets/toilet.png, it is a binary file.
+assets/toiletBroken.png, it is a binary file.
+Book.code-workspace, code is 8, comment is 0, blank is 0.
+jsconfig.json, code is 2, comment is 0, blank is 1.
+player1/items.js, code is 46, comment is 9, blank is 16.
+player1/player1.html, code is 20, comment is 0, blank is 4.
+player1/player1.js, code is 154, comment is 67, blank is 20.
+player1/rooms/hub.js, code is 41, comment is 20, blank is 4.
+player1/rooms/room1.js, code is 79, comment is 10, blank is 6.
+player1/rooms/room2.js, code is 77, comment is 7, blank is 5.
+player2/player2.html, code is 15, comment is 0, blank is 7.
+player2/player2.js, code is 260, comment is 76, blank is 14.
+player3/player3.html, code is 15, comment is 0, blank is 6.
+player3/player3.js, code is 76, comment is 17, blank is 6.
+README.md, code is 8, comment is 3, blank is 4.
+scripts/p5.min.js, code is 1, comment is 1, blank is 1.
+scripts/scenemanager.js, code is 127, comment is 42, blank is 36.
+style.css, code is 12, comment is 2, blank is 7.
+===============================================================================

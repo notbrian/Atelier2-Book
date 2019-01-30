@@ -1,0 +1,1127 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "/Users/brian/Documents/Coding/Atelier2-Book",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2019-01-29 18:28:21",
+            "filesum": 41,
+            "codesum": 936,
+            "commentsum": 139,
+            "blanksum": 226,
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "filename": "assets/background.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/basic_space.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/crack1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/crack2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/duct_tape.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Ducttape.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/EngineerHUD.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/EngineerIcon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Hammer.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/keypad.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite3.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/missioncontrolicon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/PilotHUD.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/piloticon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Satellite.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/screw.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/screwdriver.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/ship.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/shipThrust.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/shrapnel.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/toilet.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/toiletBroken.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Book.code-workspace"
+                },
+                {
+                    "blank": 1,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "jsconfig.json"
+                },
+                {
+                    "blank": 11,
+                    "code": 35,
+                    "comment": 2,
+                    "filename": "player1/items.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "player1/player1.html"
+                },
+                {
+                    "blank": 26,
+                    "code": 155,
+                    "comment": 64,
+                    "filename": "player1/player1.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 40,
+                    "comment": 4,
+                    "filename": "player1/rooms/hub.js"
+                },
+                {
+                    "blank": 11,
+                    "code": 77,
+                    "comment": 2,
+                    "filename": "player1/rooms/room1.js"
+                },
+                {
+                    "blank": 14,
+                    "code": 77,
+                    "comment": 3,
+                    "filename": "player1/rooms/room2.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "player2/player2.html"
+                },
+                {
+                    "blank": 74,
+                    "code": 256,
+                    "comment": 13,
+                    "filename": "player2/player2.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "player3/player3.html"
+                },
+                {
+                    "blank": 18,
+                    "code": 87,
+                    "comment": 3,
+                    "filename": "player3/player3.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 8,
+                    "comment": 3,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 1,
+                    "code": 1,
+                    "comment": 1,
+                    "filename": "scripts/p5.min.js"
+                },
+                {
+                    "blank": 36,
+                    "code": 127,
+                    "comment": 42,
+                    "filename": "scripts/scenemanager.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 12,
+                    "comment": 2,
+                    "filename": "style.css"
+                }
+            ]
+        },
+        {
+            "version": "0.1.7",
+            "counttime": "2019-01-29 18:39:40",
+            "filesum": 41,
+            "codesum": 946,
+            "commentsum": 148,
+            "blanksum": 225,
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "filename": "assets/background.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/basic_space.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/crack1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/crack2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/duct_tape.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Ducttape.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/EngineerHUD.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/EngineerIcon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Hammer.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/keypad.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite3.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/missioncontrolicon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/PilotHUD.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/piloticon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Satellite.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/screw.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/screwdriver.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/ship.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/shipThrust.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/shrapnel.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/toilet.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/toiletBroken.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Book.code-workspace"
+                },
+                {
+                    "blank": 1,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "jsconfig.json"
+                },
+                {
+                    "blank": 16,
+                    "code": 46,
+                    "comment": 8,
+                    "filename": "player1/items.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "player1/player1.html"
+                },
+                {
+                    "blank": 20,
+                    "code": 154,
+                    "comment": 67,
+                    "filename": "player1/player1.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 40,
+                    "comment": 4,
+                    "filename": "player1/rooms/hub.js"
+                },
+                {
+                    "blank": 11,
+                    "code": 77,
+                    "comment": 2,
+                    "filename": "player1/rooms/room1.js"
+                },
+                {
+                    "blank": 14,
+                    "code": 77,
+                    "comment": 3,
+                    "filename": "player1/rooms/room2.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "player2/player2.html"
+                },
+                {
+                    "blank": 74,
+                    "code": 256,
+                    "comment": 13,
+                    "filename": "player2/player2.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "player3/player3.html"
+                },
+                {
+                    "blank": 18,
+                    "code": 87,
+                    "comment": 3,
+                    "filename": "player3/player3.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 8,
+                    "comment": 3,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 1,
+                    "code": 1,
+                    "comment": 1,
+                    "filename": "scripts/p5.min.js"
+                },
+                {
+                    "blank": 36,
+                    "code": 127,
+                    "comment": 42,
+                    "filename": "scripts/scenemanager.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 12,
+                    "comment": 2,
+                    "filename": "style.css"
+                }
+            ]
+        },
+        {
+            "version": "0.1.7",
+            "counttime": "2019-01-29 21:05:53",
+            "filesum": 41,
+            "codesum": 953,
+            "commentsum": 241,
+            "blanksum": 144,
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "filename": "assets/background.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/basic_space.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/crack1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/crack2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/duct_tape.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Ducttape.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/EngineerHUD.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/EngineerIcon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Hammer.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/keypad.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite3.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/missioncontrolicon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/PilotHUD.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/piloticon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Satellite.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/screw.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/screwdriver.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/ship.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/shipThrust.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/shrapnel.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/toilet.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/toiletBroken.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Book.code-workspace"
+                },
+                {
+                    "blank": 1,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "jsconfig.json"
+                },
+                {
+                    "blank": 16,
+                    "code": 46,
+                    "comment": 9,
+                    "filename": "player1/items.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "player1/player1.html"
+                },
+                {
+                    "blank": 20,
+                    "code": 154,
+                    "comment": 67,
+                    "filename": "player1/player1.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 41,
+                    "comment": 20,
+                    "filename": "player1/rooms/hub.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 79,
+                    "comment": 10,
+                    "filename": "player1/rooms/room1.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 77,
+                    "comment": 7,
+                    "filename": "player1/rooms/room2.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "player2/player2.html"
+                },
+                {
+                    "blank": 14,
+                    "code": 260,
+                    "comment": 76,
+                    "filename": "player2/player2.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "player3/player3.html"
+                },
+                {
+                    "blank": 13,
+                    "code": 87,
+                    "comment": 4,
+                    "filename": "player3/player3.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 8,
+                    "comment": 3,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 1,
+                    "code": 1,
+                    "comment": 1,
+                    "filename": "scripts/p5.min.js"
+                },
+                {
+                    "blank": 36,
+                    "code": 127,
+                    "comment": 42,
+                    "filename": "scripts/scenemanager.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 12,
+                    "comment": 2,
+                    "filename": "style.css"
+                }
+            ]
+        },
+        {
+            "version": "0.1.7",
+            "counttime": "2019-01-29 21:17:51",
+            "filesum": 41,
+            "codesum": 942,
+            "commentsum": 254,
+            "blanksum": 137,
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "filename": "assets/background.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/basic_space.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/crack1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/crack2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/duct_tape.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Ducttape.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/EngineerHUD.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/EngineerIcon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Hammer.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/keypad.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Meteorite3.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/missioncontrolicon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/PilotHUD.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/piloticon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/Satellite.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/screw.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/screwdriver.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/ship.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/shipThrust.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/shrapnel.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/toilet.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets/toiletBroken.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Book.code-workspace"
+                },
+                {
+                    "blank": 1,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "jsconfig.json"
+                },
+                {
+                    "blank": 16,
+                    "code": 46,
+                    "comment": 9,
+                    "filename": "player1/items.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "player1/player1.html"
+                },
+                {
+                    "blank": 20,
+                    "code": 154,
+                    "comment": 67,
+                    "filename": "player1/player1.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 41,
+                    "comment": 20,
+                    "filename": "player1/rooms/hub.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 79,
+                    "comment": 10,
+                    "filename": "player1/rooms/room1.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 77,
+                    "comment": 7,
+                    "filename": "player1/rooms/room2.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "player2/player2.html"
+                },
+                {
+                    "blank": 14,
+                    "code": 260,
+                    "comment": 76,
+                    "filename": "player2/player2.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "player3/player3.html"
+                },
+                {
+                    "blank": 6,
+                    "code": 76,
+                    "comment": 17,
+                    "filename": "player3/player3.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 8,
+                    "comment": 3,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 1,
+                    "code": 1,
+                    "comment": 1,
+                    "filename": "scripts/p5.min.js"
+                },
+                {
+                    "blank": 36,
+                    "code": 127,
+                    "comment": 42,
+                    "filename": "scripts/scenemanager.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 12,
+                    "comment": 2,
+                    "filename": "style.css"
+                }
+            ]
+        }
+    ]
+}
