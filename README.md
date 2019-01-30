@@ -1,6 +1,6 @@
 # Atelier2-Book
 
-If you want to play, grab three friends and open these links: 
+If you want to play, grab two friends and open these links: 
 
 Player 1
 https://notbriann.com/Atelier2-Book/player1/player1.html
